@@ -3,9 +3,11 @@
 Arquitectura de Computadores – 2026-2
 
 ## Integrantes
-- Nombre 1
-- Nombre 2
-- Nombre 3
+- Lucas Fernandez
+- Maximiliano Ferrando
+- Renato Rivadeneira
+- Matias Ureta
+
 
 ## Estructura del repositorio
 
