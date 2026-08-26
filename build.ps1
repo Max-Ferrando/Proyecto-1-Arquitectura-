@@ -19,7 +19,12 @@ param(
     [string]$target = 'sim'
 )
 
-$ErrorActionPreference = 'Stop'
+# OJO: NO usar $ErrorActionPreference = 'Stop' aca.
+# nextpnr y yosys escriben TODOS sus mensajes informativos por stderr. Con
+# 'Stop', PowerShell convierte esa salida en un error terminante (NativeCommandError)
+# y el script se cae aunque la herramienta haya terminado bien. En vez de eso,
+# cada paso revisa $LASTEXITCODE explicitamente, que es lo confiable.
+$ErrorActionPreference = 'Continue'
 
 # --- Ubicacion de OSS CAD Suite -----------------------------------------------
 $OSS = 'C:\Users\mpavi\oss-cad-suite'
@@ -56,7 +61,12 @@ switch ($target) {
         if ($LASTEXITCODE -ne 0) { Fallar "Fallo la simulacion." }
 
         Write-Host "==> Abriendo GTKWave..." -ForegroundColor Cyan
-        Start-Process gtkwave -ArgumentList 'calculator_tb.vcd'
+        # Si existe la vista guardada, se abre con las senales ya ordenadas.
+        if (Test-Path 'vista_calculadora.gtkw') {
+            Start-Process gtkwave -ArgumentList 'vista_calculadora.gtkw'
+        } else {
+            Start-Process gtkwave -ArgumentList 'calculator_tb.vcd'
+        }
     }
 
     'alu' {

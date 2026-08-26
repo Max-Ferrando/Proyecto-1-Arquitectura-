@@ -8,6 +8,8 @@ sim_fsm
 # Formas de onda
 *.vcd
 *.gtkw
+# ...pero la vista preparada para la demo SI se versiona
+!vista_calculadora.gtkw
 
 # Sintesis / place and route / bitstream
 *.json
@@ -17,6 +19,7 @@ sim_fsm
 nextpnr.log
 
 # Sistema
+gtkw_err.txt
 Thumbs.db
 desktop.ini
 .DS_Store
