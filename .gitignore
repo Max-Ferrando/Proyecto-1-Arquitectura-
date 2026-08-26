@@ -1,0 +1,22 @@
+# Ejecutables de simulacion (Icarus Verilog)
+sim
+sim_alu
+sim_fsm
+*.out
+*.vvp
+
+# Formas de onda
+*.vcd
+*.gtkw
+
+# Sintesis / place and route / bitstream
+*.json
+*.asc
+*.bin
+*.blif
+nextpnr.log
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
