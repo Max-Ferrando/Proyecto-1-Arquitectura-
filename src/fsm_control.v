@@ -101,9 +101,14 @@ module fsm_control (
             S_RES: begin
                 if (p_ok) begin
                     estado       <= S_OP;
+                    op_sel       <= 3'b000;
+                    op1          <= 4'b0000;
+                    op2_ext      <= 4'b0000;
                     sel_op2_prev <= 1'b0;
                 end
             end
+end
+
 
         endcase
     end
