@@ -1,36 +1,25 @@
-# ==============================================================================
-# Constraints de pines - Nandland Go Board
-# ==============================================================================
-# Familia y dispositivo: iCE40 HX1K
-# Package:               VQ100
-#
-# Pinout OFICIAL de Nandland, tomado de:
-#   https://github.com/nandland/getting-started-with-fpgas
-#   (archivo Go_Board_Pin_Constraints.pcf)
-#
-# Los nombres de aqui deben coincidir EXACTAMENTE con los puertos de
-# src/fpga_top.v.
-#
-# Solo se declaran los pines que usa este proyecto. Los del VGA, UART y PMOD
-# quedan comentados al final por si se necesitan mas adelante.
-# ==============================================================================
+# ##############################################################################
+# go_board.pcf - Nandland Go Board (iCE40 HX1K, package VQ100)
+# Pines oficiales de Go_Board_Constraints.pcf (Nandland).
+# Solo se incluyen las senales realmente usadas por el diseno.
+# ##############################################################################
 
-# --- Reloj principal (25 MHz) ---
+### Reloj principal (25 MHz)
 set_io i_Clk 15
 
-# --- LEDs ---
+### LEDs
 set_io o_LED_1 56
 set_io o_LED_2 57
 set_io o_LED_3 59
 set_io o_LED_4 60
 
-# --- Pulsadores ---
+### Pulsadores
 set_io i_Switch_1 53
 set_io i_Switch_2 51
 set_io i_Switch_3 54
 set_io i_Switch_4 52
 
-# --- Display de 7 segmentos, digito 1 (izquierdo: signo) ---
+### Display 7 segmentos #1 (signo)
 set_io o_Segment1_A 3
 set_io o_Segment1_B 4
 set_io o_Segment1_C 93
@@ -39,7 +28,7 @@ set_io o_Segment1_E 90
 set_io o_Segment1_F 1
 set_io o_Segment1_G 2
 
-# --- Display de 7 segmentos, digito 2 (derecho: valor en hex) ---
+### Display 7 segmentos #2 (valor hexadecimal)
 set_io o_Segment2_A 100
 set_io o_Segment2_B 99
 set_io o_Segment2_C 97
@@ -47,30 +36,3 @@ set_io o_Segment2_D 95
 set_io o_Segment2_E 94
 set_io o_Segment2_F 8
 set_io o_Segment2_G 96
-
-# ==============================================================================
-# Pines disponibles pero no usados en este proyecto
-# ==============================================================================
-# set_io i_UART_RX 73
-# set_io o_UART_TX 74
-#
-# set_io o_VGA_HSync 26
-# set_io o_VGA_VSync 27
-# set_io o_VGA_Red_0 36
-# set_io o_VGA_Red_1 37
-# set_io o_VGA_Red_2 40
-# set_io o_VGA_Grn_0 29
-# set_io o_VGA_Grn_1 30
-# set_io o_VGA_Grn_2 33
-# set_io o_VGA_Blu_0 28
-# set_io o_VGA_Blu_1 41
-# set_io o_VGA_Blu_2 42
-#
-# set_io io_PMOD_1 65
-# set_io io_PMOD_2 64
-# set_io io_PMOD_3 63
-# set_io io_PMOD_4 62
-# set_io io_PMOD_7 78
-# set_io io_PMOD_8 79
-# set_io io_PMOD_9 80
-# set_io io_PMOD_10 81
