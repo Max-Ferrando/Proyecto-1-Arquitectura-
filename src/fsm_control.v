@@ -107,7 +107,6 @@ module fsm_control (
                     sel_op2_prev <= 1'b0;
                 end
             end
-end
 
 
         endcase
